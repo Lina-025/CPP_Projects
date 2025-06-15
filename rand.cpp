@@ -4,25 +4,26 @@ using namespace std;
 
 int main(){
 
+    int num; 
+    int guess;
+    int tries = 0;
     srand(time(NULL));
+    num = (rand() % 3) +1;
 
-    int num1 = (rand() % 5) +1;
-    
-    switch(num1) {
-        case 1: cout << "you win a chocolate bar!\n";
-        break;
-        case 2:cout << "you win a jacket!\n";
-        break;
-        case 3:cout << "you win a free dinner!\n";
-        break;
-        case 4:cout << "you win a gift card!\n";
-        break;
-        case 5:cout << "you win opera tickets!!\n";
-        break;
-    }
-    
-    
+    cout << "number guessing game\n";
 
+    do{
+        cout << "guess the number from 1 to 3: ";
+        cin >> guess;
+        tries++; 
 
+        if (num != guess){
+            cout << "try again!\n";
+        } else { 
+            cout << "you win! # of tries: "<< tries;
+        }
+        
+    } while ( num != guess); 
+    
     return 0;
 }
